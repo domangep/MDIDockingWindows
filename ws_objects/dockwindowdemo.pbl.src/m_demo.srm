@@ -1,0 +1,855 @@
+﻿$PBExportHeader$m_demo.srm
+forward
+global type m_demo from menu
+end type
+type m_file from menu within m_demo
+end type
+type m_edit from menu within m_demo
+end type
+type m_view from menu within m_demo
+end type
+type m_databasepainter from menu within m_view
+end type
+type m_solutionexploerctrlaltl from menu within m_view
+end type
+type m_1 from menu within m_view
+end type
+type m_objectbrowserctrlaltj from menu within m_view
+end type
+type m_2 from menu within m_view
+end type
+type m_outputctrlalto from menu within m_view
+end type
+type m_pbobjectoutlineshiftf12 from menu within m_view
+end type
+type m_toolboxctrlaltx from menu within m_view
+end type
+type m_3 from menu within m_view
+end type
+type m_errorlist from menu within m_view
+end type
+type m_0 from menu within m_view
+end type
+type m_setdefaultlayout from menu within m_view
+end type
+type m_view from menu within m_demo
+m_databasepainter m_databasepainter
+m_solutionexploerctrlaltl m_solutionexploerctrlaltl
+m_1 m_1
+m_objectbrowserctrlaltj m_objectbrowserctrlaltj
+m_2 m_2
+m_outputctrlalto m_outputctrlalto
+m_pbobjectoutlineshiftf12 m_pbobjectoutlineshiftf12
+m_toolboxctrlaltx m_toolboxctrlaltx
+m_3 m_3
+m_errorlist m_errorlist
+m_0 m_0
+m_setdefaultlayout m_setdefaultlayout
+end type
+type m_build from menu within m_demo
+end type
+type m_debug from menu within m_demo
+end type
+type m_format from menu within m_demo
+end type
+type m_design from menu within m_demo
+end type
+type m_tools from menu within m_demo
+end type
+type m_window from menu within m_demo
+end type
+type m_help from menu within m_demo
+end type
+global type m_demo from menu
+m_file m_file
+m_edit m_edit
+m_view m_view
+m_build m_build
+m_debug m_debug
+m_format m_format
+m_design m_design
+m_tools m_tools
+m_window m_window
+m_help m_help
+end type
+end forward
+
+global type m_demo from menu
+m_file m_file
+m_edit m_edit
+m_view m_view
+m_build m_build
+m_debug m_debug
+m_format m_format
+m_design m_design
+m_tools m_tools
+m_window m_window
+m_help m_help
+end type
+global m_demo m_demo
+
+forward prototypes
+public function integer mf_open_sheet (string as_window, string as_position)
+end prototypes
+
+public function integer mf_open_sheet (string as_window, string as_position);if isvalid( w_demo_main ) then
+	if as_position = "" then
+		return w_demo_main.wf_open_sheet_doc( as_window )
+	else
+		return w_demo_main.wf_open_sheet_win( as_window, as_position )
+	end if
+end if
+end function
+
+on m_demo.create
+m_demo=this
+call super::create
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_file=create m_file
+this.m_edit=create m_edit
+this.m_view=create m_view
+this.m_build=create m_build
+this.m_debug=create m_debug
+this.m_format=create m_format
+this.m_design=create m_design
+this.m_tools=create m_tools
+this.m_window=create m_window
+this.m_help=create m_help
+this.Item[UpperBound(this.Item)+1]=this.m_file
+this.Item[UpperBound(this.Item)+1]=this.m_edit
+this.Item[UpperBound(this.Item)+1]=this.m_view
+this.Item[UpperBound(this.Item)+1]=this.m_build
+this.Item[UpperBound(this.Item)+1]=this.m_debug
+this.Item[UpperBound(this.Item)+1]=this.m_format
+this.Item[UpperBound(this.Item)+1]=this.m_design
+this.Item[UpperBound(this.Item)+1]=this.m_tools
+this.Item[UpperBound(this.Item)+1]=this.m_window
+this.Item[UpperBound(this.Item)+1]=this.m_help
+end on
+
+on m_demo.destroy
+call super::destroy
+destroy(this.m_file)
+destroy(this.m_edit)
+destroy(this.m_view)
+destroy(this.m_build)
+destroy(this.m_debug)
+destroy(this.m_format)
+destroy(this.m_design)
+destroy(this.m_tools)
+destroy(this.m_window)
+destroy(this.m_help)
+end on
+
+type m_file from menu within m_demo
+end type
+
+on m_file.create
+call super::create
+this.text = "File"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_file.destroy
+call super::destroy
+end on
+
+type m_edit from menu within m_demo
+end type
+
+on m_edit.create
+call super::create
+this.text = "Edit"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_edit.destroy
+call super::destroy
+end on
+
+type m_view from menu within m_demo
+m_databasepainter m_databasepainter
+m_solutionexploerctrlaltl m_solutionexploerctrlaltl
+m_1 m_1
+m_objectbrowserctrlaltj m_objectbrowserctrlaltj
+m_2 m_2
+m_outputctrlalto m_outputctrlalto
+m_pbobjectoutlineshiftf12 m_pbobjectoutlineshiftf12
+m_toolboxctrlaltx m_toolboxctrlaltx
+m_3 m_3
+m_errorlist m_errorlist
+m_0 m_0
+m_setdefaultlayout m_setdefaultlayout
+end type
+
+on m_view.create
+call super::create
+this.text = "View"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_databasepainter=create m_databasepainter
+this.m_solutionexploerctrlaltl=create m_solutionexploerctrlaltl
+this.m_1=create m_1
+this.m_objectbrowserctrlaltj=create m_objectbrowserctrlaltj
+this.m_2=create m_2
+this.m_outputctrlalto=create m_outputctrlalto
+this.m_pbobjectoutlineshiftf12=create m_pbobjectoutlineshiftf12
+this.m_toolboxctrlaltx=create m_toolboxctrlaltx
+this.m_3=create m_3
+this.m_errorlist=create m_errorlist
+this.m_0=create m_0
+this.m_setdefaultlayout=create m_setdefaultlayout
+this.Item[UpperBound(this.Item)+1]=this.m_databasepainter
+this.Item[UpperBound(this.Item)+1]=this.m_solutionexploerctrlaltl
+this.Item[UpperBound(this.Item)+1]=this.m_1
+this.Item[UpperBound(this.Item)+1]=this.m_objectbrowserctrlaltj
+this.Item[UpperBound(this.Item)+1]=this.m_2
+this.Item[UpperBound(this.Item)+1]=this.m_outputctrlalto
+this.Item[UpperBound(this.Item)+1]=this.m_pbobjectoutlineshiftf12
+this.Item[UpperBound(this.Item)+1]=this.m_toolboxctrlaltx
+this.Item[UpperBound(this.Item)+1]=this.m_3
+this.Item[UpperBound(this.Item)+1]=this.m_errorlist
+this.Item[UpperBound(this.Item)+1]=this.m_0
+this.Item[UpperBound(this.Item)+1]=this.m_setdefaultlayout
+end on
+
+on m_view.destroy
+call super::destroy
+destroy(this.m_databasepainter)
+destroy(this.m_solutionexploerctrlaltl)
+destroy(this.m_1)
+destroy(this.m_objectbrowserctrlaltj)
+destroy(this.m_2)
+destroy(this.m_outputctrlalto)
+destroy(this.m_pbobjectoutlineshiftf12)
+destroy(this.m_toolboxctrlaltx)
+destroy(this.m_3)
+destroy(this.m_errorlist)
+destroy(this.m_0)
+destroy(this.m_setdefaultlayout)
+end on
+
+type m_databasepainter from menu within m_view
+end type
+
+on m_databasepainter.create
+call super::create
+this.text = "Database Painter~tShift+F7"
+this.shortcut = 1142
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_databasepainter.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "Database Painter" , "")
+end event
+
+type m_solutionexploerctrlaltl from menu within m_view
+end type
+
+on m_solutionexploerctrlaltl.create
+call super::create
+this.text = "Solution Exploer  ~tCtrl+Alt+L"
+this.shortcut = 844
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_solutionexploerctrlaltl.destroy
+call super::destroy
+end on
+
+event clicked;//
+mf_open_sheet( "Solution" , "Left")
+
+
+end event
+
+type m_1 from menu within m_view
+end type
+
+on m_1.create
+call super::create
+this.text = "-"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_objectbrowserctrlaltj from menu within m_view
+end type
+
+on m_objectbrowserctrlaltj.create
+call super::create
+this.text = "Object Browser  ~tCtrl+Alt+J"
+this.shortcut = 842
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_objectbrowserctrlaltj.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "Object Browser" , "")
+end event
+
+type m_2 from menu within m_view
+end type
+
+on m_2.create
+call super::create
+this.text = "-"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_outputctrlalto from menu within m_view
+end type
+
+on m_outputctrlalto.create
+call super::create
+this.text = "Output  ~tCtrl+Alt+O"
+this.shortcut = 847
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_outputctrlalto.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "OutPut" , "Bottom")
+end event
+
+type m_pbobjectoutlineshiftf12 from menu within m_view
+end type
+
+on m_pbobjectoutlineshiftf12.create
+call super::create
+this.text = "PB Object Outline~tShift+F12"
+this.shortcut = 1147
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_pbobjectoutlineshiftf12.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "PBObject" , "Right")
+end event
+
+type m_toolboxctrlaltx from menu within m_view
+end type
+
+on m_toolboxctrlaltx.create
+call super::create
+this.text = "Toolbox  ~tCtrl+Alt+X"
+this.shortcut = 856
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_toolboxctrlaltx.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "Toolbox" , "Left")
+end event
+
+type m_3 from menu within m_view
+end type
+
+on m_3.create
+call super::create
+this.text = "-"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_errorlist from menu within m_view
+end type
+
+on m_errorlist.create
+call super::create
+this.text = "Error List  ~tCtrl+Alt+E"
+this.shortcut = 837
+this.toolbaritemtext = "s"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_errorlist.destroy
+call super::destroy
+end on
+
+event clicked;mf_open_sheet( "ErrorList" , "Bottom")
+end event
+
+type m_0 from menu within m_view
+end type
+
+on m_0.create
+call super::create
+this.text = "-"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_0.destroy
+call super::destroy
+end on
+
+type m_setdefaultlayout from menu within m_view
+end type
+
+event clicked;
+run('reg delete HKEY_CURRENT_USER\software\DockingWindow /f')
+gbl_default_layout = true
+messagebox("information", "Please restart this sample")
+
+end event
+
+on m_setdefaultlayout.create
+call super::create
+this.text = "Set default layout"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_setdefaultlayout.destroy
+call super::destroy
+end on
+
+type m_build from menu within m_demo
+end type
+
+on m_build.create
+call super::create
+this.text = "Build"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_build.destroy
+call super::destroy
+end on
+
+type m_debug from menu within m_demo
+end type
+
+on m_debug.create
+call super::create
+this.text = "Debug"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_debug.destroy
+call super::destroy
+end on
+
+type m_format from menu within m_demo
+end type
+
+on m_format.create
+call super::create
+this.text = "Format"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_format.destroy
+call super::destroy
+end on
+
+type m_design from menu within m_demo
+end type
+
+on m_design.create
+call super::create
+this.text = "Design"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_design.destroy
+call super::destroy
+end on
+
+type m_tools from menu within m_demo
+end type
+
+on m_tools.create
+call super::create
+this.text = "Tools"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_tools.destroy
+call super::destroy
+end on
+
+type m_window from menu within m_demo
+end type
+
+on m_window.create
+call super::create
+this.text = "Window"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_window.destroy
+call super::destroy
+end on
+
+type m_help from menu within m_demo
+end type
+
+on m_help.create
+call super::create
+this.text = "Help"
+this.enabled = false
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_help.destroy
+call super::destroy
+end on
+
+event clicked;//if isvalid(w_demo_tabwindow) then
+//	return
+//else
+//	opensheetwithparmdocked(w_demo_tabwindow, "Solution", parentwindow, WindowDockLeft!, "")
+//end if
+
+end event
+

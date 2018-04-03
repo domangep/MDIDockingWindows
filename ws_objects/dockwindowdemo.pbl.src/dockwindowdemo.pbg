@@ -1,0 +1,24 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "dockwindowdemo.pbl" "";
+@end;
+@begin Objects 
+ "dockwindowdemo.sra" "dockwindowdemo.pbl";
+ "dw_error_list.srd" "dockwindowdemo.pbl";
+ "f_getrand.srf" "dockwindowdemo.pbl";
+ "p_dockwindowdemo_exe.srj" "dockwindowdemo.pbl";
+ "p_dockwindowdemo_exe64.srj" "dockwindowdemo.pbl";
+ "m_demo.srm" "dockwindowdemo.pbl";
+ "m_demo_popup.srm" "dockwindowdemo.pbl";
+ "uo_error_list.sru" "dockwindowdemo.pbl";
+ "uo_output.sru" "dockwindowdemo.pbl";
+ "uo_pic.sru" "dockwindowdemo.pbl";
+ "uo_solution.sru" "dockwindowdemo.pbl";
+ "uo_splitebar.sru" "dockwindowdemo.pbl";
+ "uo_splitebar_pic.sru" "dockwindowdemo.pbl";
+ "w_demo_base_ui.srw" "dockwindowdemo.pbl";
+ "w_demo_main.srw" "dockwindowdemo.pbl";
+ "w_demo_startpage.srw" "dockwindowdemo.pbl";
+ "w_demo_tabdocument.srw" "dockwindowdemo.pbl";
+ "w_demo_tabwindow.srw" "dockwindowdemo.pbl";
+@end;
